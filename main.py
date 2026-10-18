@@ -9,6 +9,7 @@ from constants import SCREEN_HEIGHT
 from logger import log_state
 from player import Player
 from logger import log_event
+from shot import Shot
 
 
 def main():
@@ -33,6 +34,10 @@ def main():
 
     AsteroidField.containers = updatable
     AsteroidField()
+
+    shots = pygame.sprite.Group()
+    Shot.containers = (shots, updatable, drawable)
+
 
     while True:
         log_state()
